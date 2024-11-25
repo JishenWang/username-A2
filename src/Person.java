@@ -4,7 +4,6 @@ public abstract class Person {
     private String gender;
     private String phoneNumber; // 将地址改为电话号码
 
-    // Default constructor
     public Person() {
         this.name = "";
         this.age = 0;
@@ -12,7 +11,6 @@ public abstract class Person {
         this.phoneNumber = ""; // 初始化新增的电话号码
     }
 
-    // Constructor with parameters
     public Person(String name, int age, String gender, String phoneNumber) {
         this.name = name;
         this.age = age;

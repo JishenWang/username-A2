@@ -3,7 +3,6 @@ public class Visitor extends Person {
     private boolean hasFastPass;
     private String visitDate;
 
-    // Default constructor
     public Visitor() {
         super();
         this.ticketType = "";
@@ -11,7 +10,6 @@ public class Visitor extends Person {
         this.visitDate = "";
     }
 
-    // Constructor with parameters
     public Visitor(String name, int age, String gender, String phoneNumber, String ticketType, boolean hasFastPass, String visitDate) {
         super(name, age, gender, phoneNumber); // Calling the superclass constructor
         this.ticketType = ticketType;
