@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -6,12 +7,15 @@ public class Ride implements RideInterface {
     private final String rideType; // 显示游乐设施类型
     private final Employee rideOperator; // 显示操作员的信息
     private final Queue<Visitor> visitorQueue;
+    private final LinkedList<Visitor> rideHistory;  // 存储已乘坐过的游客
+
 
     public Ride() {
         this.rideName = "";
         this.rideType = "";
         this.rideOperator = null;
         this.visitorQueue = new LinkedList<>();
+        this.rideHistory = new LinkedList<>();
     }
 
     public Ride(String rideName, String rideType, Employee rideOperator) {
@@ -19,6 +23,7 @@ public class Ride implements RideInterface {
         this.rideType = rideType;
         this.rideOperator = rideOperator;
         this.visitorQueue = new LinkedList<>();
+        this.rideHistory = new LinkedList<>();
     }
 
     // 接口RideInterface中实现方法
@@ -65,21 +70,37 @@ public class Ride implements RideInterface {
 
     @Override
     public void addVisitorToHistory(Visitor visitor) {
-        throw new UnsupportedOperationException("Unimplemented method 'addVisitorToHistory'");
+        rideHistory.add(visitor);
+        System.out.println("Visitor " + visitor.getName() + " has been added to the ride history.");
     }
 
     @Override
     public boolean checkVisitorFromHistory(Visitor visitor) {
-        throw new UnsupportedOperationException("Unimplemented method 'checkVisitorFromHistory'");
+        if (rideHistory.contains(visitor)) {
+            System.out.println("Visitor " + visitor.getName() + " is in the ride history.");
+            return true;
+        } else {
+            System.out.println("Visitor " + visitor.getName() + " has not yet taken the ride.");
+            return false;
+        }
     }
 
     @Override
     public int numberOfVisitors() {
-        throw new UnsupportedOperationException("Unimplemented method 'numberOfVisitors'");
+        return rideHistory.size();
     }
 
     @Override
     public void printRideHistory() {
-        throw new UnsupportedOperationException("Unimplemented method 'printRideHistory'");
+        if (rideHistory.isEmpty()) {
+            System.out.println("No visitors have taken the ride yet.");
+        } else {
+            System.out.println("Visitors who have taken the ride:");
+            Iterator<Visitor> iterator = rideHistory.iterator();
+            while (iterator.hasNext()) {
+                Visitor visitor = iterator.next();
+                System.out.println(visitor.getName() + ", " + visitor.getAge() + " years old, " + visitor.getPhoneNumber());
+            }
+        }
     }
 }

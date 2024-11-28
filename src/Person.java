@@ -2,20 +2,20 @@ public abstract class Person {
     private String name;
     private int age;
     private String gender;
-    private String phoneNumber; // 将地址改为电话号码
+    private String phoneNumber; 
 
     public Person() {
         this.name = "";
         this.age = 0;
         this.gender = "";
-        this.phoneNumber = ""; // 初始化新增的电话号码
+        this.phoneNumber = ""; 
     }
 
     public Person(String name, int age, String gender, String phoneNumber) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-        this.phoneNumber = phoneNumber; // 初始化电话号码
+        this.phoneNumber = phoneNumber;
     }
 
     // Getters and Setters

@@ -2,6 +2,7 @@ public class AssignmentTwo {
     public static void main(String[] args) {
         AssignmentTwo assignment = new AssignmentTwo();
         assignment.partThree();
+        assignment.partFourA();
     }
     public void partThree() {
 // 创建Ride和游客
@@ -35,6 +36,46 @@ public class AssignmentTwo {
         rollerCoaster.printRideOperator();
     }
     public void partFourA() {
+    // 创建一个Ride对象和一个操作员
+        Employee operator = new Employee("YiMing", 40, "Female", "18954637834", "Ride Operator", 3000, "E12345");
+        Ride rollerCoaster = new Ride("Roller Coaster", "Thrill", operator);    
+        
+        Visitor visitor6 = new Visitor("MingfanJiang", 25, "Male", "17346599637", "Standard", false, null);
+        Visitor visitor7 = new Visitor("TuPi", 30, "Female", "14758457328", "VIP", true, null);
+        Visitor visitor8 = new Visitor("ErXiong", 22, "Female", "18467364337", "Standard", false, null);
+        Visitor visitor9 = new Visitor("DaXiong", 35, "Male", "19174624387", "VIP", true, null);
+        Visitor visitor10 = new Visitor("FengLin", 28, "Male", "16484720473", "Standard", false, null);
+
+        
+
+        // 添加游客到队列
+        rollerCoaster.addVisitorToQueue(visitor6);
+        rollerCoaster.addVisitorToQueue(visitor7);
+        rollerCoaster.addVisitorToQueue(visitor8);
+        rollerCoaster.addVisitorToQueue(visitor9);
+        rollerCoaster.addVisitorToQueue(visitor10);
+
+        // 打印队列中的游客
+        rollerCoaster.printQueue();
+
+        // 移除一个游客并打印队列
+        rollerCoaster.removeVisitorFromQueue(visitor8);
+        rollerCoaster.printQueue();
+
+        // 将游客添加到历史记录
+        rollerCoaster.addVisitorToHistory(visitor6);
+        rollerCoaster.addVisitorToHistory(visitor7);
+        rollerCoaster.addVisitorToHistory(visitor9);
+
+        // 检查一个游客是否在历史记录中
+        rollerCoaster.checkVisitorFromHistory(visitor10);  // Not in history
+        rollerCoaster.checkVisitorFromHistory(visitor6);  // In history
+
+        // 打印历史记录中的游客数量
+        System.out.println("Number of visitors in ride history: " + rollerCoaster.numberOfVisitors());
+
+        // 打印所有历史记录中的游客
+        rollerCoaster.printRideHistory();
     }
     public void partFourB() {
     }
