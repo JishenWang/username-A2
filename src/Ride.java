@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -99,8 +101,13 @@ public class Ride implements RideInterface {
             Iterator<Visitor> iterator = rideHistory.iterator();
             while (iterator.hasNext()) {
                 Visitor visitor = iterator.next();
-                System.out.println(visitor.getName() + ", " + visitor.getAge() + " years old, " + visitor.getPhoneNumber());
+                System.out.println(visitor.getName() + ", " + visitor.getAge() + ", "  + visitor.getGender() + " years old, " + visitor.getPhoneNumber() + ", " + visitor.getTicketType() + ", " + visitor.isHasFastPass() + ", " + visitor.getVisitDate());
             }
         }
+    }
+
+     public void sortRideHistory(Comparator<Visitor> comparator) {
+        Collections.sort(rideHistory, comparator);
+        System.out.println("Ride history sorted.");
     }
 }

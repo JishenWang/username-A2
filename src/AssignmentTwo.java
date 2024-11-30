@@ -3,6 +3,7 @@ public class AssignmentTwo {
         AssignmentTwo assignment = new AssignmentTwo();
         assignment.partThree();
         assignment.partFourA();
+        assignment.partFourB();
     }
     public void partThree() {
 // 创建Ride和游客
@@ -78,6 +79,35 @@ public class AssignmentTwo {
         rollerCoaster.printRideHistory();
     }
     public void partFourB() {
+        // 创建员工和游乐设施
+        Employee rideOperator = new Employee("YuexingLiang", 30, "Male", "17436548385", "Operator", 3000, "E001");
+        Ride rollerCoaster = new Ride("Roller Coaster", "Thrill Ride", rideOperator);
+
+        // 创建游客
+        Visitor visitor11 = new Visitor("HuiMing", 25, "Female", "17343684927", "VIP", true, "2024-11-30");
+        Visitor visitor12 = new Visitor("YifanYang", 30, "Male", "12857844782", "Standard", false, "2024-11-30");
+        Visitor visitor13 = new Visitor("FengLin", 28, "Male", "12848574927", "Standard", true, "2024-11-30");
+        Visitor visitor14 = new Visitor("YiWang", 35, "Female", "12759472475", "VIP", true, "2024-11-30");
+        Visitor visitor15 = new Visitor("ZimuLi", 40, "Female", "13750317485", "Standard", false, "2024-11-30");
+
+        // 添加游客到历史记录
+        rollerCoaster.addVisitorToHistory(visitor11);
+        rollerCoaster.addVisitorToHistory(visitor12);
+        rollerCoaster.addVisitorToHistory(visitor13);
+        rollerCoaster.addVisitorToHistory(visitor14);
+        rollerCoaster.addVisitorToHistory(visitor15);
+
+        // 打印排序前的游客历史记录
+        System.out.println("Before Sorting:");
+        rollerCoaster.printRideHistory();
+
+        // 对游客进行排序
+        Touristranking comparator = new Touristranking();
+        rollerCoaster.sortRideHistory(comparator);
+
+        // 打印排序后的游客历史记录
+        System.out.println("\nAfter Sorting:");
+        rollerCoaster.printRideHistory();
     }
     public void partFive() {
     }
