@@ -4,6 +4,7 @@ public class AssignmentTwo {
         assignment.partThree();
         assignment.partFourA();
         assignment.partFourB();
+        assignment.partFive();
     }
     public void partThree() {
 // 创建Ride和游客
@@ -101,7 +102,7 @@ public class AssignmentTwo {
         System.out.println("Before Sorting:");
         rollerCoaster.printRideHistory();
 
-        // 对游客进行排序
+        // 使用VisitorComparator对游客进行排序
         Touristranking comparator = new Touristranking();
         rollerCoaster.sortRideHistory(comparator);
 
@@ -110,6 +111,46 @@ public class AssignmentTwo {
         rollerCoaster.printRideHistory();
     }
     public void partFive() {
+        // 创建Ride和操作员
+        Employee rideOperator = new Employee("Tom", 30, "Male", "123456789", "Operator", 3000, "E001");
+        Ride rollerCoaster = new Ride("Roller Coaster", "Thrill Ride", rideOperator); // 每次最多5个游客
+
+        // 创建并添加游客到队列
+        Visitor visitor16 = new Visitor("XiangAo", 25, "Female", "17482947284", "VIP", true, "2024-12-03");
+        Visitor visitor17 = new Visitor("ShuYU", 30, "Male", "18472748594", "Standard", false, "2024-12-03");
+        Visitor visitor18 = new Visitor("ZItaoYang", 28, "Male", "12858395012", "Standard", true, "2024-12-03");
+        Visitor visitor19 = new Visitor("ShaohuaSun", 35, "Female", "11849372846", "VIP", true, "2024-12-03");
+        Visitor visitor20 = new Visitor("YangLi", 22, "Female", "15849376821", "Standard", false, "2024-12-03");
+        Visitor visitor21 = new Visitor("TaiMing", 29, "Male", "10683628582", "VIP", true, "2024-12-03");
+        Visitor visitor22 = new Visitor("ZhangWei", 27, "Male", "18499927463", "Standard", true, "2024-12-03");
+        Visitor visitor23 = new Visitor("LiLi", 24, "Female", "13958223759", "Standard", false, "2024-12-03");
+        Visitor visitor24 = new Visitor("MingWang", 32, "Female", "14956384827", "VIP", true, "2024-12-03");
+        Visitor visitor25 = new Visitor("SunQian", 26, "Female", "13859384726", "Standard", false, "2024-12-03");
+
+        rollerCoaster.addVisitorToQueue(visitor16);
+        rollerCoaster.addVisitorToQueue(visitor17);
+        rollerCoaster.addVisitorToQueue(visitor18);
+        rollerCoaster.addVisitorToQueue(visitor19);
+        rollerCoaster.addVisitorToQueue(visitor20);
+        rollerCoaster.addVisitorToQueue(visitor21);
+        rollerCoaster.addVisitorToQueue(visitor22);
+        rollerCoaster.addVisitorToQueue(visitor23);
+        rollerCoaster.addVisitorToQueue(visitor24);
+        rollerCoaster.addVisitorToQueue(visitor25);
+
+        // 打印队列
+        System.out.println("Visitors in the queue before cycle:");
+        rollerCoaster.printQueue();
+
+        // 运行一个循环
+        rollerCoaster.runOneCycle();
+
+        // 打印队列和历史记录
+        System.out.println("\nVisitors in the queue after one cycle:");
+        rollerCoaster.printQueue();
+
+        System.out.println("\nVisitors who have taken the ride:");
+        rollerCoaster.printRideHistory();
     }
     public void partSix() {
     }
