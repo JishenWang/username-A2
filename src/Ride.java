@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ public class Ride implements RideInterface {
     private int numOfCycles;  // 已运行的循环次数
 
 
-    public Ride() {
+    public Ride(String roller_Coaster, String thrill_Ride, Employee rideOperator1, int par) {
         this.rideName = "";
         this.rideType = "";
         this.rideOperator = null;
@@ -134,4 +135,17 @@ public class Ride implements RideInterface {
         Collections.sort(rideHistory, comparator);
         System.out.println("Ride history sorted.");
     }
+    public void exportRideHistory(String filename) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            // 写入每个游客的信息
+            for (Visitor visitor : rideHistory) {
+                writer.write(visitor.toString());  
+                writer.newLine();
+            }
+            System.out.println("游客历史记录已导出：" + filename);
+        } catch (IOException e) {
+            System.out.println("导出游客历史记录出错：" + e.getMessage());
+        }
+    }
+
 }

@@ -5,6 +5,7 @@ public class AssignmentTwo {
         assignment.partFourA();
         assignment.partFourB();
         assignment.partFive();
+        assignment.partSix();
     }
     public void partThree() {
 // 创建Ride和游客
@@ -153,6 +154,25 @@ public class AssignmentTwo {
         rollerCoaster.printRideHistory();
     }
     public void partSix() {
+        Employee rideOperator = new Employee("ZiLi", 35, "Male", "17564843759", "Operator", 3000, "E001");
+        Ride rollerCoaster = new Ride("Roller Coaster", "Thrill Ride", rideOperator, 5);
+
+        // 创建游客
+        Visitor visitor26 = new Visitor("YimuJia", 25, "Female", "19473849827", "VIP", true, "2024-12-6");
+        Visitor visitor27 = new Visitor("MingJiang", 30, "Male", "19374859275", "Standard", false, "2024-12-6");
+        Visitor visitor28 = new Visitor("YueLiu", 28, "Male", "12859184637", "Standard", true, "2024-12-6");
+        Visitor visitor29 = new Visitor("YaoWang", 35, "Female", "10275839254", "VIP", true, "2024-12-6");
+        Visitor visitor30 = new Visitor("YiYang", 22, "Female", "14593659759", "Standard", false, "2024-12-6");
+
+        // 添加游客到历史记录
+        rollerCoaster.addVisitorToHistory(visitor26);
+        rollerCoaster.addVisitorToHistory(visitor27);
+        rollerCoaster.addVisitorToHistory(visitor28);
+        rollerCoaster.addVisitorToHistory(visitor29);
+        rollerCoaster.addVisitorToHistory(visitor30);
+
+        // 导出游客历史记录到文件
+        rollerCoaster.exportRideHistory("ride_history.txt");
     }
     public void partSeven() {
     }

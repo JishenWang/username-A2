@@ -41,4 +41,8 @@ public class Visitor extends Person {
     public void setVisitDate(String visitDate) {
         this.visitDate = visitDate;
     }
+    @Override
+    public String toString() {
+        return "Name: " + getName() + ", Age: " + getAge() + ", Gender: " + getGender() + ", Phone: " + getPhoneNumber() + ", visitor: " + getTicketType() + ", visitor: " + isHasFastPass() + ", Visit Date: " + getVisitDate();
+    }
 }
