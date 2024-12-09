@@ -1,5 +1,5 @@
-Name: YimuJia, Age: 25, Gender: Female, Phone: 19473849827, visitor: VIP, visitor: true, Visit Date: 2024-12-6
-Name: MingJiang, Age: 30, Gender: Male, Phone: 19374859275, visitor: Standard, visitor: false, Visit Date: 2024-12-6
-Name: YueLiu, Age: 28, Gender: Male, Phone: 12859184637, visitor: Standard, visitor: true, Visit Date: 2024-12-6
-Name: YaoWang, Age: 35, Gender: Female, Phone: 10275839254, visitor: VIP, visitor: true, Visit Date: 2024-12-6
-Name: YiYang, Age: 22, Gender: Female, Phone: 14593659759, visitor: Standard, visitor: false, Visit Date: 2024-12-6
+YimuJia, 25, Female, 19473849827, VIP, true, 2024-12-6
+MingJiang, 30, Male, 19374859275, Standard, false, 2024-12-6
+YueLiu, 28, Male, 12859184637, Standard, true, 2024-12-6
+YaoWang, 35, Female, 10275839254, VIP, true, 2024-12-6
+YiYang, 22, Female, 14593659759, Standard, false, 2024-12-6

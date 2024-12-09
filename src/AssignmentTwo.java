@@ -1,11 +1,12 @@
 public class AssignmentTwo {
     public static void main(String[] args) {
         AssignmentTwo assignment = new AssignmentTwo();
-        assignment.partThree();
-        assignment.partFourA();
-        assignment.partFourB();
-        assignment.partFive();
+        //assignment.partThree();
+        //assignment.partFourA();
+        //assignment.partFourB();
+        //assignment.partFive();
         assignment.partSix();
+        assignment.partSeven();
     }
     public void partThree() {
 // 创建Ride和游客
@@ -175,5 +176,18 @@ public class AssignmentTwo {
         rollerCoaster.exportRideHistory("ride_history.txt");
     }
     public void partSeven() {
+        Employee rideOperator = new Employee("Tom", 30, "Male", "123456789", "Operator", 3000, "E001");
+        Ride rollerCoaster = new Ride("Roller Coaster", "Thrill Ride", rideOperator, 4);
+
+        // 导入历史记录
+        rollerCoaster.importRideHistory("ride_history.txt");  
+
+        // 打印导入后的游客数量
+        System.out.println("已导入游客数量: " + rollerCoaster.numberOfVisitors());
+
+        // 打印所有导入的游客信息
+        //for (Visitor visitor : rollerCoaster.getRideHistory()) {
+            rollerCoaster.printRideHistory();
+        //}
     }
 }

@@ -43,6 +43,28 @@ public class Visitor extends Person {
     }
     @Override
     public String toString() {
-        return "Name: " + getName() + ", Age: " + getAge() + ", Gender: " + getGender() + ", Phone: " + getPhoneNumber() + ", visitor: " + getTicketType() + ", visitor: " + isHasFastPass() + ", Visit Date: " + getVisitDate();
+        return getName() + ", " + getAge() + ", " + getGender() + ", " + getPhoneNumber() + ", " + getTicketType() + ", " + isHasFastPass() + ", " + getVisitDate();
     }
+
+    public static Visitor fromString(String data) {
+        String[] parts = data.split(","); 
+        if (parts.length == 7) {
+            try {
+                String name = parts[0].trim();
+                int age = Integer.parseInt(parts[1].trim());
+                String gender = parts[2].trim();
+                String phoneNumber = parts[3].trim();
+                String ticketType =parts[4].trim();
+                boolean hasFastTrack = Boolean.parseBoolean(parts[5].trim());
+                String visitDate =parts[6].trim();
+                
+                return new Visitor(name, age, gender, phoneNumber, ticketType, hasFastTrack, visitDate);
+            } catch (NumberFormatException e) {
+                System.out.println("解析游客信息出错：" + e.getMessage());
+                return null; 
+            }
+        }
+        return null;
+    }
+
 }

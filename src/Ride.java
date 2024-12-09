@@ -147,5 +147,21 @@ public class Ride implements RideInterface {
             System.out.println("导出游客历史记录出错：" + e.getMessage());
         }
     }
+    public void importRideHistory(String filename) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Visitor visitor = Visitor.fromString(line);  
+                if (visitor != null) {
+                    rideHistory.add(visitor);  
+                }
+            }
+            System.out.println("游客历史记录已成功从文件导入：" + filename);
+        } catch (IOException e) {
+            System.out.println("文件读取出错: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("导入过程中错误: " + e.getMessage());
+        }
+    }
 
 }
