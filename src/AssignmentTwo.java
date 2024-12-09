@@ -1,10 +1,10 @@
 public class AssignmentTwo {
     public static void main(String[] args) {
         AssignmentTwo assignment = new AssignmentTwo();
-        //assignment.partThree();
-        //assignment.partFourA();
-        //assignment.partFourB();
-        //assignment.partFive();
+        assignment.partThree();
+        assignment.partFourA();
+        assignment.partFourB();
+        assignment.partFive();
         assignment.partSix();
         assignment.partSeven();
     }
@@ -114,7 +114,7 @@ public class AssignmentTwo {
     }
     public void partFive() {
         // 创建Ride和操作员
-        Employee rideOperator = new Employee("Tom", 30, "Male", "123456789", "Operator", 3000, "E001");
+        Employee rideOperator = new Employee("LiYang", 28, "Male", "10596837486", "Operator", 3000, "E001");
         Ride rollerCoaster = new Ride("Roller Coaster", "Thrill Ride", rideOperator); // 每次最多5个游客
 
         // 创建并添加游客到队列
@@ -176,7 +176,7 @@ public class AssignmentTwo {
         rollerCoaster.exportRideHistory("ride_history.txt");
     }
     public void partSeven() {
-        Employee rideOperator = new Employee("Tom", 30, "Male", "123456789", "Operator", 3000, "E001");
+        Employee rideOperator = new Employee("liMing", 26, "Male", "19574859395", "Operator", 3000, "E001");
         Ride rollerCoaster = new Ride("Roller Coaster", "Thrill Ride", rideOperator, 4);
 
         // 导入历史记录
